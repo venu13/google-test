@@ -12,15 +12,10 @@ TEST(ToUpperTest, BasicTest)
 
     //Assert
     ASSERT_STREQ("HELLO WORLD", inputString);
+    ASSERT_STRCASEEQ("Hello WORLD", inputString);
 
-    // if(0 == strcmp("HELLO WORLD", inputString))
-    // {
-    //     std::cout << "equal strings" << std::endl;
-    // }
-    // else
-    // {
-    //     std::cout << "unequal strings" << std::endl;
-    // }
+    std::string convertedStr(inputString);
+    ASSERT_EQ("HELLO WORLD", convertedStr);
 }
 
 int main(int argc, char** argv)
