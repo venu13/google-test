@@ -1,3 +1,6 @@
 #pragma once
+#include<vector>
 
-int add(int, int);
+bool isPositive(int x);
+
+int countPositive(std::vector<int> const& inputVector);

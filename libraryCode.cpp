@@ -1,6 +1,13 @@
 #include "libraryCode.h"
 
-int add(int a, int b)
+#include <algorithm>
+
+bool isPositive(int x)
 {
-    return a+b;
+    return x >= 0;
+}
+
+int countPositive(std::vector<int> const& inputVector)
+{
+    return std::count_if(inputVector.begin(), inputVector.end(), isPositive);
 }
