@@ -2,7 +2,7 @@
 #include<gtest/gtest.h>
 #include "libraryCode.h"
 
-TEST_F(AccountTestFixture, TestEmptyAccount)
+TEST(AccountTest, TestEmptyAccount)
 {
     Account account;
 
