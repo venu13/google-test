@@ -2,22 +2,25 @@
 #include<gtest/gtest.h>
 #include "libraryCode.h"
 
-
-TEST(TestSample, isPositive)
+TEST(ToUpperTest, BasicTest)
 {
-    ASSERT_TRUE(isPositive(3));
-}
+    //Arrange
+    char inputString[] = "Hello World";
 
-TEST(TestSample, countPositive)
-{
-    //Arrange.
-    std::vector<int> x = {1,2,3,4,5};
+    //Act
+    toUpper(inputString);
 
-    //Act.
-    int count = countPositive(x);
-    
-    //Assert.
-    ASSERT_EQ(5, countPositive(x));
+    //Assert
+    ASSERT_STREQ("HELLO WORLD", inputString);
+
+    // if(0 == strcmp("HELLO WORLD", inputString))
+    // {
+    //     std::cout << "equal strings" << std::endl;
+    // }
+    // else
+    // {
+    //     std::cout << "unequal strings" << std::endl;
+    // }
 }
 
 int main(int argc, char** argv)

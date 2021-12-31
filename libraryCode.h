@@ -1,6 +1,11 @@
 #pragma once
-#include<vector>
+#include <cstring>
+#include<cctype>
 
-bool isPositive(int x);
-
-int countPositive(std::vector<int> const& inputVector);
+void toUpper(char* inputString)
+{
+    for(unsigned i=0; i<strlen(inputString); ++i)
+    {
+        inputString[i] = toupper(inputString[i]);
+    }
+}
