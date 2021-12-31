@@ -13,6 +13,8 @@ TEST(AccountTest, TestEmptyAccount)
 class AccountTestFixture : public ::testing::Test
 {
 public:
+    AccountTestFixture();
+    virtual ~AccountTestFixture();
     void SetUp() override;
     void TearDown() override;
     static void SetUpTestCase();
@@ -20,6 +22,16 @@ public:
 protected:
     Account* account;
 };
+
+AccountTestFixture::AccountTestFixture()
+{
+    std::cout << "AccountTestFixture Constructor" << std::endl;
+}
+
+AccountTestFixture::~AccountTestFixture()
+{
+    std::cout << "AccountTestFixture Destructor" << std::endl;
+}
 
 void AccountTestFixture::SetUp()
 {
