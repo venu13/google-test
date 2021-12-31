@@ -2,20 +2,20 @@
 #include<gtest/gtest.h>
 #include "libraryCode.h"
 
-TEST(ToUpperTest, BasicTest)
+TEST(SquareRootTest, NegativeArgumentTest)
 {
-    //Arrange
-    char inputString[] = "Hello World";
+    double inputValue = -8;
+    
+    ASSERT_THROW(mySqrt(inputValue), std::runtime_error);
+    ASSERT_ANY_THROW(mySqrt(inputValue));   
+}
 
-    //Act
-    toUpper(inputString);
+TEST(SquareRootTest, PositiveArgumentTest)
+{
+    double inputValue = 9;
 
-    //Assert
-    ASSERT_STREQ("HELLO WORLD", inputString);
-    ASSERT_STRCASEEQ("Hello WORLD", inputString);
-
-    std::string convertedStr(inputString);
-    ASSERT_EQ("HELLO WORLD", convertedStr);
+    ASSERT_NO_THROW(mySqrt(inputValue));
+    ASSERT_EQ(3, mySqrt(inputValue));
 }
 
 int main(int argc, char** argv)
